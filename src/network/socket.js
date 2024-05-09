@@ -4,6 +4,7 @@ export default class Socket {
   constructor(baseURL, getAccessToken) {
     this.io = socket(baseURL, {
       auth: (cb) => cb({ token: getAccessToken() }),
+      transports: ['websocket'],
     });
 
     this.io.on('connect_error', (error) => {

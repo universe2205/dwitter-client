@@ -1,5 +1,5 @@
 export default class TweetService {
-  constructor(http, tokenStorage, socket) {
+  constructor(http, socket) {
     this.http = http;
     this.socket = socket;
   }

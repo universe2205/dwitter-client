@@ -32,5 +32,16 @@ export default class AuthService {
     });
   }
 
-  async logout() {}
+  async logout() {
+    return this.http.fetch('/auth/logout', {
+      method: 'POST',
+    });
+  }
+
+  async csrfToken() {
+    const resp = await this.http.fetch('/auth/csrf-token', {
+      method: 'GET',
+    });
+    return resp.csrfToken;
+  }
 }
